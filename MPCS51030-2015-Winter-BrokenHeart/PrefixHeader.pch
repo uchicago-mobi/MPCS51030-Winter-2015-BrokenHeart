@@ -1,0 +1,83 @@
+//
+//  PrefixHeader.pch
+//  MPCS51030-2015-Winter-BrokenHeart
+//
+//  Created by T. Andrew Binkowski on 3/1/15.
+//  Copyright (c) 2015 Department of Computer Science, The University of Chicago. All rights reserved.
+//
+
+#ifndef MPCS51030_2015_Winter_BrokenHeart_PrefixHeader_pch
+#define MPCS51030_2015_Winter_BrokenHeart_PrefixHeader_pch
+
+/** Import any frameworks you will use across entire project */
+#import <QuartzCore/QuartzCore.h>
+
+/** Import any ategories you will use across entire project */
+//#import "NSArray+Shuffle.h"
+
+/** Define any helper macros (e.g. color helpers) */
+#define RGB(r,g,b)          [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:1.0]
+#define RGBA(r, g, b, a)    [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:a]
+#define RGBHEX(rgbValue)    [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
+
+/** Define any template colors you will use across the entire project */
+#define kColorBrandBlue             RGB(130,124,156)
+#define kColorBrandYellow           RGBHEX(0xF5F680)
+#define kColorBrandNavigationBar    Purple RGBHEX(0xba8abd)
+
+/** Debug log for `Run` scheme */
+#ifdef DEBUG
+#   define DLog(fmt, ...) printf(">>>>> %s ...... \t%s[Line %d]\n",[[NSString stringWithFormat:fmt, ##__VA_ARGS__] UTF8String],__PRETTY_FUNCTION__, __LINE__);
+#else
+#   define DLog(...)
+#endif
+
+/** A(lways) log for all schemes */
+#define ALog(fmt, ...) NSLog((@"%s [Line %d] " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__);
+
+/** Alert log - Display a UIAlertView to the screen with debugging information */
+#ifdef DEBUG
+#   define AlertLog(fmt, ...)  { UIAlertView *alert = [[UIAlertView alloc] initWithTitle:[NSString stringWithFormat:@"%s\n [Line %d] ", __PRETTY_FUNCTION__, __LINE__] message:[NSString stringWithFormat:fmt, ##__VA_ARGS__]  delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil]; [alert show]; }
+#else
+#   define AlertLog(...)
+#endif
+
+/** URL Debug Log */
+#define DEBUG_URL_SESSION 1 // Turn this on/off as needed
+
+#ifdef DEBUG_URL_SESSION
+#   define ULog(fmt, ...) printf("☎️ %s ...... \t%s[Line %d]\n",[[NSString stringWithFormat:fmt, ##__VA_ARGS__] UTF8String],__PRETTY_FUNCTION__, __LINE__);
+#else
+#   define ULog(...)
+#endif
+
+/** User Defaults Constants */
+static NSString* const kApplicationUUIDKey          = @"kApplicationUUIDKey";
+static NSString* const kApplicationDeviceTokenKey   = @"kApplicationDeviceTokenKey";
+static NSString * const NotificationCategoryIdent  = @"ACTIONABLE";
+static NSString * const NotificationActionOneIdent = @"ACTION_ONE";
+static NSString * const NotificationActionTwoIdent = @"ACTION_TWO";
+
+
+/** Settings Defaults */
+static NSString* const kDefaultsDebugEnabled        = @"kDefaultsDebugEnabled";
+
+/** API URLS */
+#ifdef DEBUG
+//Development URLs
+#define kBaseURL    @"http://test.com/rest"
+#define kforgetURL  @"http://test.com/viewForgetPassword"
+#else
+// Production URLS
+#define kBaseURL    @"https://real.com/rest"
+#define kforgetURL  @"https://real.com/viewForgetPassword"
+#endif
+
+#define kLoginURL               [NSURL URLWithString:(kBaseURL @"/login.json")]
+#define kLogoutURL              [NSURL URLWithString:(kBaseURL @"/logout.json")]
+#define kEventPostURL           [NSURL URLWithString:(kBaseURL @"/events.json")]
+
+/** Singleton Macros */
+#define NETWORKING  [[Networking sharedNetworking] // Now you can call [NETWORKING doSomething];
+
+#endif

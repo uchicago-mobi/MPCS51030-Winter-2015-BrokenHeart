@@ -7,21 +7,67 @@
 //
 
 #import "ViewController.h"
+#import "Heart.h"
 
 @interface ViewController ()
-
+@property (nonatomic, strong) NSMutableArray *hearts;
 @end
 
 @implementation ViewController
 
-- (void)viewDidLoad {
+
+/*
+ This is a multiline comment
+ */
+
+// This is a single line comment
+
+
+//#warning This is a warning
+
+//#error You need to fix this
+
+
+// FIXME: fix me
+
+// ???: what is this?
+
+// !!!: pay attention
+
+// TODO: Do this message
+
+
+- (void)viewDidLoad
+{
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    
+    // Create an array so that we have a loop to debug
+    self.hearts = [NSMutableArray arrayWithCapacity:255];
+    for (int i=0; i<255; i++) {
+        CGRect frame = CGRectMake(i+5, i+5, 20, 20);
+        
+        // Create a heart object and store the frame and color
+        Heart *heart = [[Heart alloc] initWithFrame:frame];
+        heart.backgroundColor = RGB(i, 0, 0);
+        heart.tag = i;
+        [self.hearts addObject:heart];
+        
+    }
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+/** 
+ There should be a [super viewDidAppear:] call here, but it is ommited to
+ highlight Code Analysis (shift-command B)
+ */
+- (void)viewDidAppear:(BOOL)animated
+{
+    // Add the hearts
+    for (Heart *heart in self.hearts) {
+        [self.view addSubview:heart];
+    }
+
 }
+
+
 
 @end

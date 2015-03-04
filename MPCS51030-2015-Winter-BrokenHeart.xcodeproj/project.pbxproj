@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3729531D1AA41E930015729D /* Heart.m in Sources */ = {isa = PBXBuildFile; fileRef = 3729531C1AA41E930015729D /* Heart.m */; };
+		372953201AA4BC710015729D /* NotificationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3729531F1AA4BC710015729D /* NotificationsViewController.m */; };
 		37A9B7DB1AA407DD00C1F7BC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 37A9B7DA1AA407DD00C1F7BC /* main.m */; };
 		37A9B7DE1AA407DD00C1F7BC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 37A9B7DD1AA407DD00C1F7BC /* AppDelegate.m */; };
 		37A9B7E11AA407DD00C1F7BC /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37A9B7E01AA407DD00C1F7BC /* ViewController.m */; };
@@ -27,6 +29,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		372953171AA41A8A0015729D /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		3729531B1AA41E930015729D /* Heart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Heart.h; sourceTree = "<group>"; };
+		3729531C1AA41E930015729D /* Heart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Heart.m; sourceTree = "<group>"; };
+		3729531E1AA4BC710015729D /* NotificationsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationsViewController.h; sourceTree = "<group>"; };
+		3729531F1AA4BC710015729D /* NotificationsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificationsViewController.m; sourceTree = "<group>"; };
 		37A9B7D51AA407DD00C1F7BC /* MPCS51030-2015-Winter-BrokenHeart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MPCS51030-2015-Winter-BrokenHeart.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		37A9B7D91AA407DD00C1F7BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		37A9B7DA1AA407DD00C1F7BC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -85,6 +92,10 @@
 				37A9B7DD1AA407DD00C1F7BC /* AppDelegate.m */,
 				37A9B7DF1AA407DD00C1F7BC /* ViewController.h */,
 				37A9B7E01AA407DD00C1F7BC /* ViewController.m */,
+				3729531E1AA4BC710015729D /* NotificationsViewController.h */,
+				3729531F1AA4BC710015729D /* NotificationsViewController.m */,
+				3729531B1AA41E930015729D /* Heart.h */,
+				3729531C1AA41E930015729D /* Heart.m */,
 				37A9B7E21AA407DD00C1F7BC /* Main.storyboard */,
 				37A9B7E51AA407DD00C1F7BC /* Images.xcassets */,
 				37A9B7E71AA407DD00C1F7BC /* LaunchScreen.xib */,
@@ -98,6 +109,7 @@
 			children = (
 				37A9B7D91AA407DD00C1F7BC /* Info.plist */,
 				37A9B7DA1AA407DD00C1F7BC /* main.m */,
+				372953171AA41A8A0015729D /* PrefixHeader.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -219,8 +231,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				372953201AA4BC710015729D /* NotificationsViewController.m in Sources */,
 				37A9B7E11AA407DD00C1F7BC /* ViewController.m in Sources */,
 				37A9B7DE1AA407DD00C1F7BC /* AppDelegate.m in Sources */,
+				3729531D1AA41E930015729D /* Heart.m in Sources */,
 				37A9B7DB1AA407DD00C1F7BC /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -349,6 +363,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/MPCS51030-2015-Winter-BrokenHeart/PrefixHeader.pch";
 				INFOPLIST_FILE = "MPCS51030-2015-Winter-BrokenHeart/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -359,6 +375,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/MPCS51030-2015-Winter-BrokenHeart/PrefixHeader.pch";
 				INFOPLIST_FILE = "MPCS51030-2015-Winter-BrokenHeart/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -418,6 +436,7 @@
 				37A9B7FA1AA407DD00C1F7BC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		37A9B7FB1AA407DD00C1F7BC /* Build configuration list for PBXNativeTarget "MPCS51030-2015-Winter-BrokenHeartTests" */ = {
 			isa = XCConfigurationList;
@@ -426,6 +445,7 @@
 				37A9B7FD1AA407DD00C1F7BC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

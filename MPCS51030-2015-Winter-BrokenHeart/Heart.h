@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  Heart.h
 //  MPCS51030-2015-Winter-BrokenHeart
 //
 //  Created by T. Andrew Binkowski on 3/1/15.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface Heart : UIView
+@property (nonatomic, strong) NSString *rgbColorName;
+@property (nonatomic, strong) UIColor *color;
 @end
-
